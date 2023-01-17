@@ -81,7 +81,7 @@ gpu걸린시간:  20.912834405899048
 print('걸린시간: ', end-start)
 
 
-#제출할 놈
+#제출
 y_submit=model.predict(test_csv)
 print(y_submit)
 print(y_submit.shape)  #(715, 1)
