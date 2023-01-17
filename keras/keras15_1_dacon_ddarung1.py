@@ -68,13 +68,13 @@ y_predict=model.predict(x_test)  #x_test값으로 y_predict 예측
 print('x_test :', x_test)
 print('y_predict :', y_predict)
 
-#결측치 > nan > 실패
+######결측치 > nan > 실패########
 
 def RMSE(y_test, y_predict):
     return np.sqrt(mean_squared_error(y_test, y_predict))
 print('RMSE: ', RMSE(y_test, y_predict))
 
-#제출할 놈
+#제출
 y_submit=model.predict(test_csv)
 
 
