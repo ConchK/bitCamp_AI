@@ -9,7 +9,7 @@ datasets= load_iris()
 #상세내역 보기 x=3개 y=1개. class correlation에서 상관관계 확인. 쓸모없는 정보는 제외. 수치가 너무 높아도 안됨.
 # print(datasets.feature_names)       #판다스   .columns
 
-x= datasets.data   #이렇게도 작성 가능
+x= datasets.data   #== x = datasets['data']
 y= datasets['target']
 # print(x)
 # print(y)
