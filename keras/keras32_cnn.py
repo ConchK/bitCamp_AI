@@ -9,14 +9,14 @@ model= Sequential()
 
 model.add(Conv2D(filters=10,        #4*4로 바뀐 수치를 10장으로 만들겠다 > 연산량이(특성이 증가한 데이터) 늘어남. >>output
                 kernel_size=(2,2),  #가로 2칸, 세로2칸 지정.
-                padding = 'same', #  특성의 크기는 줄어들지 않음. 디폴트는 'valid'
-                #연산 중 가장 자리에 있는 데이터의 소멸을 막기 위해, 특성을 넓게 잡기 위해 끝에 0으로 된 패딩을 한 줄씩 넣어준다. >> 특성은 높이고 데이터는 늘리고. 
+                
                 # (5,5,1) 필터 100 > (5,5,100)
-                input_shape=(5,5,1))) # =흑백그림 1장: 가로 5칸, 세로 5칸, 흑백 1(5,5,1)  >>kernel_size=(2,2)로 계산 후 4*4로 바뀜 :정사각형 4칸이 1칸으로(4,4,10)
+                input_shape=(10,10,1))) # =흑백그림 1장: 가로 5칸, 세로 5칸, 흑백 1(5,5,1)  >>kernel_size=(2,2)로 계산 후 4*4로 바뀜 :정사각형 4칸이 1칸으로(4,4,10)
               #(batch_size, rows, colums, channels)  
 model.add(Conv2D(5, kernel_size=(2,2)))   #(3,3,5)  순차 레이어는 상위 레이어의 아웃풋이 하위 레이어의 인풋이기 때문에 따로 명시 하지 않음.
 #모든 것의 사용 여부는 최종 결과치를 보고 결정.
-
+model.add(Conv2D(7, (2,2)))
+model.add(Conv2D(6, (2)))
 model.add(Flatten())    #한 줄로 펼쳐 열로 만듦. 3*3*5==45  (45,)
 model.add(Dense(units=10))        #(N, 4, 4,10)
           #인풋은 (batch_size, input_dim)
