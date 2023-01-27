@@ -6,7 +6,7 @@ import numpy as np
 x = np.array([1,2,3,4,5,6,7,8,9,10])
 y = np.array([1,2,3,4,5,6,7,8,9,10])
 
-#2. 모델구성 (Sequential은 레이어에 순차적으로 연산)
+#2. 모델구성
 model=Sequential()
 model.add(Dense(1, input_dim=1))
 
