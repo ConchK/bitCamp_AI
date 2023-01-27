@@ -33,9 +33,16 @@ from tensorflow. keras. layers import Conv2D, Dense, Flatten, MaxPooling2D  # ==
 
 model= Sequential()
 model.add(Conv2D(filters=128, kernel_size=(3,3), input_shape=(28,28,1),
-                 padding= 'same', # kernel_size=(3,3) 일 땐, 0으로 된 패딩이 양쪽으로 생김. 
+                 padding= 'same',
+                 #특성의 크기는 줄어들지 않음. 디폴트는 'valid'
+                 #연산 중 가장자리에 있는 데이터의 소멸을 막기 위해, 특성을 넓게 잡기 위해 끝에 0으로 된 패딩을 한 줄씩 넣어준다. >> 특성은 높이고 데이터는 늘리고. 
+                 # kernel_size=(3,3) 일 땐, 0으로 된 패딩이 양쪽으로 생김. 
                  strides=2,  # 보폭. 연산으로 2칸씩 넘어감. Maxpooling2D 랑은 다름. 1 = 1칸씩.
                  activation= 'relu'))    #(28,28,128)
+
+
+
+                 
 model.add(MaxPooling2D())   # max_pooling2d (MaxPooling2D  (None, 14, 14, 128)      0)  / 영역이 겹치지 않는 2*2
 #kernel_size 내의 특성 중 가장 높은 특성만 선택 >> 연산량이 반으로 줄어듦. 큰 데이터에서 사용하지만, 결과치 보고 사용여부 결정. 마지막에 남은 데이터는 연산 x 
 model.add(Conv2D(filters=64, kernel_size=(2,2),
