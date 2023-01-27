@@ -43,7 +43,7 @@ conv1= Conv2D(filters=128, kernel_size=(3,3), input_shape=(28,28,1),
 maxpool1= MaxPooling2D()(conv1)
 conv2= Conv2D(filters=64, kernel_size=(2,2), padding = 'same')(maxpool1)
 conv3= Conv2D(filters=64, kernel_size=(2,2))(conv2)
-flatten= Flatten()(conv2)
+flatten= Flatten()(conv3)
 dense1= Dense(32, activation= 'relu')(flatten)
 output1= Dense(10, activation= 'softmax')(dense1)
 model= Model(inputs=input1, outputs=output1)   #정의가 마지막으로 
