@@ -72,3 +72,7 @@ results= model.evaluate(x_test, y_test)
 print('loss: ', results[0])
 print('acc: ', results[1])
 
+'''
+loss:  0.09927216172218323
+acc:  0.9733999967575073
+'''
