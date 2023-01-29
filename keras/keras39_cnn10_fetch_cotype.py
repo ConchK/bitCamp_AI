@@ -75,7 +75,7 @@ x_test= x_test.reshape(116203,54,1,1)
 #Total params: 32,662
 
 model= Sequential()
-model.add(Conv2D(40, (2,1), input_shape= (54,1,1), padding = 'same', strides = 3, activation= 'relu'))
+model.add(Conv2D(40, (2,1), input_shape= (54,1,1), strides = 3, activation= 'relu'))
 model.add(Conv2D(40, (2,1), padding = 'same', activation= 'relu'))
 model.add(Flatten())
 model.add(Dense(80, activation= 'relu'))  
@@ -122,9 +122,16 @@ acc= accuracy_score(y_test, y_predict)
 print("accuracy_score : ",acc)
 
 '''
+dnn
 loss :  0.33543387055397034
 accuracy :  0.8613202571868896
 y_pred(예측값) :  [1 6 0 ... 1 1 0]
 y_test(원래값) :  [1 6 4 ... 1 1 0]
 accuracy_score :  0.8613202757243789
+cnn
+loss :  0.4493860602378845
+accuracy :  0.8048845529556274
+y_pred(예측값) :  [1 6 0 ... 1 1 0]
+y_test(원래값) :  [1 6 4 ... 1 1 0]
+accuracy_score :  0.8048845554761925
 '''
