@@ -152,3 +152,11 @@ print("y_test(원래값) : ",y_test)
 
 acc= accuracy_score(y_test, y_predict)
 print("accuracy_score : ",acc)
+
+'''
+loss :  0.7558484077453613
+accuracy :  0.6800254583358765
+y_pred(예측값) :  [1 0 1 ... 1 1 0]
+y_test(원래값) :  [1 6 4 ... 1 1 0]
+accuracy_score :  0.680025472664217
+'''
